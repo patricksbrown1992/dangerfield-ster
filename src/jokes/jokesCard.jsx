@@ -19,12 +19,29 @@ class JokesCard extends React.Component {
     }
 
     changeSmile(){
-
-        this.setState({smile: !this.state.smile})
+        if(this.state.frown){
+            if(this.state.smile){
+                this.setState({smile: false, frown: false})
+            } else {
+                this.setState({smile: true, frown: false})
+            }
+        } else {
+            this.setState({smile: !this.state.smile})
+        }
+        
     }
+
     changeFrown(){
 
-        this.setState({frown: !this.state.frown})
+        if(this.state.smile){
+            if(this.state.frown){
+                this.setState({smile: false, frown: false})
+            } else {
+                this.setState({smile: false, frown: true})
+            }
+        } else {
+            this.setState({frown: !this.state.frown})
+        }
     }
 
     render(){
