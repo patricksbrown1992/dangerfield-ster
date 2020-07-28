@@ -1,6 +1,6 @@
 import React from 'react';
-import smile from '../smile.png';
-import frown from '../frown.png';
+import smilePhoto from '../smile.png';
+import frownPhoto from '../frown.png';
 
 
 
@@ -8,29 +8,55 @@ class JokesCard extends React.Component {
     constructor(props){
         super(props);
         
-        this.state = {setup: 'My wife and I were happy for twenty years.', punchline: 'Then we met.'};
+        this.state = {setup: '', punchline: '', smile: false, frown: false};
+        this.changeSmile = this.changeSmile.bind(this);
+        this.changeFrown = this.changeFrown.bind(this);
    
     }
 
+    componentDidMount(){
+        this.setState({setup: this.props.setup, punchline: this.props.punchline, smile: this.props.smile, frown: this.props.frown})
+    }
 
+    changeSmile(){
+
+        this.setState({smile: !this.state.smile})
+    }
+    changeFrown(){
+
+        this.setState({frown: !this.state.frown})
+    }
 
     render(){
-        
-        
+
+        let smile;
+        let frown
+        if(this.state.smile){
+            smile = 'smile'
+        } else {
+            smile = ''
+        }
+        if(this.state.frown){
+            frown = 'frown'
+        } else {
+            frown = ''
+        }
+
        
         return (
             
             <div className='joke-card'>
                 <div className = 'setup'>
-                    {this.state.setup}
+                    {this.props.setup}
                 </div>
                 <div className = 'punch-line'>
-                    {this.state.punchline}
+                    {this.props.punchline}
                 </div>
 
                 <div className = 'like-buttons'>
-                    <img className = 'smile' src={smile} alt="like button as a smiley"/>
-                    <img className = 'frown' src={frown} alt="dislike button as a frown"/>
+                    <img onClick={this.changeSmile} className = {smile} src={smilePhoto} alt="like button as a smiley"/>
+                  
+                    <img onClick={this.changeFrown} className = {frown} src={frownPhoto} alt="dislike button as a frown"/>
                 </div>
                 
             </div>
