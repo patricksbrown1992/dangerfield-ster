@@ -48,15 +48,18 @@ body {
 }
 
 .smile {
-  padding: 10px;
-  border-radius: 3px;
+
   background-color: #76E4A6;
-  cursor: pointer;
+
 }
 
 .frown {
+  
+  background-color: #FA8775;
+}
+
+.like-buttons img {
   padding: 10px;
   cursor: pointer;
   border-radius: 3px;
-  background-color: #FA8775;
 }
