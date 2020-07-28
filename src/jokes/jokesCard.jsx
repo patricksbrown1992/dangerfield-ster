@@ -1,4 +1,6 @@
 import React from 'react';
+import smile from '../smile.png';
+import frown from '../frown.png';
 
 
 
@@ -6,7 +8,7 @@ class JokesCard extends React.Component {
     constructor(props){
         super(props);
         
-        this.state = {email: '', password: ''};
+        this.state = {setup: 'My wife and I were happy for twenty years.', punchline: 'Then we met.'};
    
     }
 
@@ -19,8 +21,18 @@ class JokesCard extends React.Component {
         return (
             
             <div className='joke-card'>
+                <div className = 'setup'>
+                    {this.state.setup}
+                </div>
+                <div className = 'punch-line'>
+                    {this.state.punchline}
+                </div>
+
+                <div className = 'like-buttons'>
+                    <img className = 'smile' src={smile} alt=""/>
+                    <img className = 'frown' src={frown} alt=""/>
+                </div>
                 
-                <h3>This is the joke</h3>
             </div>
           
         )

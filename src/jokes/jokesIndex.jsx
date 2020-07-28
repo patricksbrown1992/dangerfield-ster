@@ -18,7 +18,7 @@ class JokesForm extends React.Component {
        
         return (
             
-            <div className='outerdiv'>
+            <div className='joke-index'>
                 
                 <h3>This is the jokes form</h3>
                 <Card /> 
