@@ -29,8 +29,8 @@ class JokesCard extends React.Component {
                 </div>
 
                 <div className = 'like-buttons'>
-                    <img className = 'smile' src={smile} alt=""/>
-                    <img className = 'frown' src={frown} alt=""/>
+                    <img className = 'smile' src={smile} alt="like button as a smiley"/>
+                    <img className = 'frown' src={frown} alt="dislike button as a frown"/>
                 </div>
                 
             </div>
